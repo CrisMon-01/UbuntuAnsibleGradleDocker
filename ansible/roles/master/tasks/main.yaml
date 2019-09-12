@@ -19,13 +19,15 @@
     name: openjdk-8-jdk
     state: present
 
+- name: Export java home
+  shell: export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64"
+
 - name: "Check gradle version is present"
   stat:
     path: "{{ gradle_link }}"
   register: gradle_present
 
 - block:
-
   - name: "Install unzip"
     package:
       name: unzip

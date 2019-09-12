@@ -1,5 +1,13 @@
 - name: curl application
+  shell: "sleep 10"
+
+- name: curl application
+  shell: "echo sono pronto a fare curl"
+
+- name: curl application
   shell: "curl http://ubuntu1 > file.txt"
+  ignore_errors: yes
 
 - name: curl application
   shell: "curl http://ubuntu1 > file1.txt"
+  ignore_errors: yes
