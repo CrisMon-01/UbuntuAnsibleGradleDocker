@@ -83,10 +83,10 @@
     chdir: /home/ubuntu/project
 
 - name: Run Docker container
-  shell: "docker run -d -p 80:80 img"
+  shell: "docker run -d -p 80:8080 img"
 
 - name: sleep
-  shell: "sleep 30"
+  shell: "sleep 120"
 
 - name: delete all containers
   shell: "docker rm -f $(docker ps -a -q)"
