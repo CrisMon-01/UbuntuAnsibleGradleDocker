@@ -1,5 +1,5 @@
 - name: clone repository project
-  user: ubuntu
+  become_user: ubuntu
   git:
     repo: https://github.com/CrisMon-01/UbuntuAnsibleGradleDocker
     dest: /home/ubuntu/project
@@ -62,3 +62,21 @@
 
 - name: Build With Gradle
   shell: "gradle build"
+
+- name: Build The image
+  docker_image:
+    build:
+#      path: ./
+    name: applicazione
+    tag: v1
+#    push: yes
+    source: build
+
+- name: start a container
+  docker_container:
+    name: myapplication
+    image: applicazione:v1
+    state: started
+    restart: yes
+    ports:
+     - "80:80"
