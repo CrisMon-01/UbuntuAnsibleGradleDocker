@@ -72,8 +72,8 @@
 
 - name: clone repository ASW
   git:
-    repo: https://github.com/CrisMon-01/ProgettoASW.git
-    dest: /home/ubuntu/asw
+    repo: https://github.com/CrisMon-01/UbuntuAnsibleGradleDocker
+    dest: /home/ubuntu/project
 
 - debug:
     msg: "Gradle {{ gradle_version }} is installed"
