@@ -1,8 +1,18 @@
-- name: clone repository project
-  become_user: ubuntu
-  git:
-    repo: https://github.com/CrisMon-01/UbuntuAnsibleGradleDocker
-    dest: /home/ubuntu/project
+- block:
+  - name: clone repository project
+    become_user: ubuntu
+    git:
+      repo: https://github.com/CrisMon-01/UbuntuAnsibleGradleDocker
+      dest: /home/ubuntu/project
+  rescue:
+    - name: pull repository project
+      become_user: ubuntu
+      git: 
+        repo: https://github.com/CrisMon-01/UbuntuAnsibleGradleDocker
+        dest: /home/ubuntu/project
+        update: yes
+        version: master
+      ignore_errors: yes
 
 - name: install openjdk
   apt:
