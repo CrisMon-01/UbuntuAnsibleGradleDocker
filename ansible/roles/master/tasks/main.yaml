@@ -3,15 +3,15 @@
     repo: https://github.com/CrisMon-01/UbuntuAnsibleGradleDocker
     dest: /home/ubuntu/project
 
-- name: Execute gradle build
-  shell: sudo ./gradle wrapper
-  args:
-    chdir: project/
+#- name: Execute gradle build
+#  shell: sudo ./gradle wrapper
+#  args:
+#    chdir: project/
 
-- name: Execute gradle build
-  shell: sudo gradle build
-  args:
-    chdir: project/
+#- name: Execute gradle build
+#  shell: sudo gradle build
+#  args:
+#    chdir: project/
 
 - debug:
     msg: "Gradle {{ gradle_version }} is installed"
