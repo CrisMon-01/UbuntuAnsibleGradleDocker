@@ -7,5 +7,9 @@
 -   hosts: uno
     sudo: yes
     roles:
-        - common
         - master
+
+-   hosts: due
+    sudo: yes   
+    roles:
+        - slave

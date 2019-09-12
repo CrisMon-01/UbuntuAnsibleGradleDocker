@@ -5,6 +5,9 @@ ubuntu2
 [uno]
 ubuntu1 
 
+[due]
+ubuntu2
+
 [all:vars]
 ansible_user=ubuntu
 become=true
