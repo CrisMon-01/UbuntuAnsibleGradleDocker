@@ -1,5 +1,5 @@
-- name: wai to service to start
-  shell: sleep 1000
+#- name: wai to service to start
+#  shell: sleep 1000
 
-- name: curl application
-  shell: "curl http://ubuntu1 > file.txt"
+#- name: curl application
+#  shell: "curl http://ubuntu1 > file.txt"
