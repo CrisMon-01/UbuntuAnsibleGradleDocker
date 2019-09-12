@@ -4,7 +4,12 @@
     dest: /home/ubuntu/project
 
 - name: Execute gradle build
-  shell: gradle build
+  shell: sudo ./gradle wrapper
+  args:
+    chdir: project/
+
+- name: Execute gradle build
+  shell: sudo gradle build
   args:
     chdir: project/
 
