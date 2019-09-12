@@ -11,4 +11,3 @@
 - debug:
     msg: "Gradle {{ gradle_version }} is installed"
   when: gradle_ver.rc == 0
-
