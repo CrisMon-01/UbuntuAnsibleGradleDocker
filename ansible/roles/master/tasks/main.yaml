@@ -84,5 +84,9 @@
 
 - name: Run Docker container
   shell: "docker run -d -p 80:80 img"
-  args:
-    chdir: /home/ubuntu/project
+
+- name: sleep
+  shell: "sleep 30"
+
+- name: delete all containers
+  shell: "docker rm -f $(docker ps -a -q)"
