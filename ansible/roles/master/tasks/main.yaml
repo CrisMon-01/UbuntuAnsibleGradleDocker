@@ -63,20 +63,26 @@
 - name: Build With Gradle
   shell: "gradle build"
 
-- name: Build The image
-  docker_image:
-    build:
-#      path: ./
-    name: applicazione
-    tag: v1
-#    push: yes
-    source: build
+- name: Build Docker image
+  shell: "docker build . -t applicazione"
 
-- name: start a container
-  docker_container:
-    name: myapplication
-    image: applicazione:v1
-    state: started
-    restart: yes
-    ports:
-     - "80:80"
+- name: Run Docker container
+  shell: "docker run -d -p 80:80 applicazione"
+
+#- name: Build The image
+#  docker_image:
+#    build:
+#      path: ./
+#    name: applicazione
+#    tag: v1
+#    push: yes
+#    source: build
+
+#- name: start a container
+#  docker_container:
+#    name: myapplication
+#    image: applicazione:v1
+#    state: started
+#    restart: yes
+#    ports:
+#     - "80:80"
