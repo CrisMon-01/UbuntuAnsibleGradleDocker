@@ -2,11 +2,9 @@
   git:
     repo: https://github.com/CrisMon-01/UbuntuAnsibleGradleDocker
     dest: /home/ubuntu/project
-    
+
 - name: Execute gradle build
   shell: gradle build
-  environment:
-    GRADLE_USER_HOME: "{{gradle_home}}"
   args:
     chdir: project/
 
